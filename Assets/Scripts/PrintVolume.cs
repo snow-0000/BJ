@@ -15,6 +15,7 @@ public class PrintVolume : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //prints volume in percentage
         GetComponent<TextMeshProUGUI>().SetText(((Mathf.Round(slider.value * 100f) / 100f)*100).ToString() + "%");
     }
 }

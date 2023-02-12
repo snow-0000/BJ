@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //for each stage stands a function
         if (firstStage)
         {
             FirstCardDistribution();
@@ -50,6 +52,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    //this function compares the scores of the player and the dealer
+    //ans triggers reactions or text for each specific case win lose or draw
     public void Compare()
     {
         //Set canvas button
@@ -66,21 +71,18 @@ public class GameManager : MonoBehaviour
 
         if (dealerScore > 21)
         {
+            // if dealer bursts everyone mocks the dealer by cheering 
+
             runtimeCanvas.transform.GetChild(4).GetComponent<TextMeshProUGUI>().SetText("Dealer Bursts");
             for (int i = 0; i < activePlayers.Count; i++)
             {
-                if (activePlayers[i].GetComponent<CardCount>().ownedCardCount<22)
-                {
-                    activePlayers[i].GetComponent<Animator>().SetBool("win", true);
-                }
-                else
-                {
-                    activePlayers[i].GetComponent<CardCount>().animated = false;
-                }
+                activePlayers[i].GetComponent<Animator>().SetBool("win", true);
+               
             }
         }
         else
         {
+            //check score for each player 
             for (int i = 0; i < activePlayers.Count; i++)
             {
                 if (activePlayers[i].GetComponent<CardCount>().ownedCardCount <= 21)
@@ -261,7 +263,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-        //Resets player card count values
+        //Resets player card count values and canvas text
         for (int i = 0; i < activePlayers.Count; i++)
         {
             activePlayers[i].GetComponent<SetText>().text.SetText("");

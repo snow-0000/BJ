@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CardValue : MonoBehaviour
 {
+    // store card value
+
     public bool isAce;
     public int cardValue;
 }

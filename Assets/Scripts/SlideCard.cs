@@ -14,6 +14,7 @@ public class SlideCard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //slide cards based on mouse x and y coordinates
         float x = Input.GetAxis("Mouse X");
         float y = Input.GetAxis("Mouse Y");
         if (active)
@@ -23,6 +24,8 @@ public class SlideCard : MonoBehaviour
                 transform.position = new Vector3(transform.position.x - (x / 50), transform.position.y, transform.position.z - (y / 50));
             }
         }
+
+        //adds rigidbody and inertia to it 
         if (Input.GetMouseButtonUp(0))
         {
             active = false;

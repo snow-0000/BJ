@@ -12,6 +12,8 @@ public class PrintCardCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //updates card count value to world canvas
         int score = GetComponent<CardCount>().ownedCardCount;
         if (score > 0 & score < 22)
         {

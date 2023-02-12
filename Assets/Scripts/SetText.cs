@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class SetText : MonoBehaviour
 {
-
+    //stores the text ui to be accessible from another gameobject
     public TextMeshProUGUI text;
 
 }

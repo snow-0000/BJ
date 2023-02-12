@@ -12,18 +12,10 @@ public class BlackJackAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //set text variable and decisional courage
         text = GetComponent<SetText>().text;
         courage = Random.Range(0.2f, 0.7f);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-
-    }
-
 
     //Make a decision based on the variable courage and a random number
     public void MakeDecision()
@@ -56,15 +48,15 @@ public class BlackJackAI : MonoBehaviour
 
     }
 
+    //don t ask for cards
     void Stop()
     {
         text.SetText("Stay");
-        Debug.Log("Stay");
     }
+    //ask for card and update card count variable
     void Card()
     {
         text.SetText("Stay");
-        Debug.Log("Card");
         GetComponent<CardCount>().expectedCards += 1; GetComponent<CardCount>().full = false;
     }
 

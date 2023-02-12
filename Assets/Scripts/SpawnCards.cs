@@ -48,6 +48,7 @@ public class SpawnCards : MonoBehaviour
                 {
                     if (random)
                     {
+                    //istantiate gameobject and add components and positional values
                         int index = ReturnRandomCard();
 
                         GameObject instance = Instantiate(Resources.Load(resources[index].name) as GameObject);
@@ -61,6 +62,7 @@ public class SpawnCards : MonoBehaviour
                     }
                     else
                     {
+                    //istantiate gameobject and add components and positional values
                         GameObject instance = Instantiate(Resources.Load(resources[count].name) as GameObject);
                         instance.transform.SetParent(parent);
 
@@ -76,6 +78,8 @@ public class SpawnCards : MonoBehaviour
                 {
                     if (random)
                     {
+
+                    //istantiate gameobject and add components and positional values
                         int index = ReturnRandomCard();
 
                         GameObject instance = Instantiate(Resources.Load(resources[index].name) as GameObject);
@@ -83,7 +87,7 @@ public class SpawnCards : MonoBehaviour
 
                         instance.transform.position = new Vector3(-0.2f + offset, 0.75f - (offset/100), 0.15f);
 
-                        //ADD CARD TO DEALER CARD LIST
+                        //ADD CARD TO DEALER CARD LIST CHECK IF ITS AN ACE
                         int dealerCardCount = 0;
                         for (int i = 0; i < dealerCard.cardValues.Count; i++)
                         {
@@ -112,12 +116,13 @@ public class SpawnCards : MonoBehaviour
                     }
                     else
                     {
+                    //istantiate gameobject and add components and positional values
                         GameObject instance = Instantiate(Resources.Load(resources[count].name) as GameObject);
                         instance.transform.SetParent(parent);
 
                         instance.transform.position = new Vector3(-0.2f + offset, 0.75f - (offset / 100), 0.15f);
 
-                         //ADD CARD TO DEALER CARD LIST
+                         //ADD CARD TO DEALER CARD LIST CHECK IF ITS AN ACE
                         int dealerCardCount = 0;
                         for (int i = 0; i < dealerCard.cardValues.Count; i++)
                         {
@@ -182,6 +187,7 @@ public class SpawnCards : MonoBehaviour
     }
 
 
+    //set the random bool on for a shuffled card set
     public void Shuffle()
     {
         audioManager.PlaySound(0);

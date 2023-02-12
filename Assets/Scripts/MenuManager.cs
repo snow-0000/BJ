@@ -11,6 +11,8 @@ public class MenuManager : MonoBehaviour
     {
         players = number;
     }
+
+    //gets input from button to decide wich scene to load
     public void Dimension(int number)
     {
         if (number == 2)
@@ -22,17 +24,13 @@ public class MenuManager : MonoBehaviour
             twoD = false;
         }
     }
+    //load scene
     public void Play()
     {
-        if (twoD)
-        {
-            SceneManager.LoadScene(players.ToString() + "Players2D");
-        }
-        if (!twoD)
-        {
-            SceneManager.LoadScene(players.ToString() + "Players3D");
-        }
+        SceneManager.LoadScene(players.ToString() + "Players");
+       
     }
+    //quit game
     public void Quit()
     {
         Application.Quit();

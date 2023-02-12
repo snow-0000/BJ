@@ -5,15 +5,10 @@ using UnityEngine;
 public class Shuffle : MonoBehaviour
 {
     public SpawnCards spawner;
-    // Start is called before the first frame update
+    // Shuffles cards if mouse clicks over collider
     void OnMouseDown()
     {
         spawner.Shuffle();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

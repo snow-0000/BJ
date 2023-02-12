@@ -4,15 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class AssignCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // assign camera too world canvas
     void Awake()
     {
         GetComponent<Canvas>().worldCamera = Camera.main;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

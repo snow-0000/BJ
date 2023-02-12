@@ -14,29 +14,40 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //enable and disables menu if escape is pressed
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (active)
             {
                 //enable machanics
-                cameraMovement.active = true;
-                spawnCards.active = true;
-
-                menuCanvas.SetActive(false);
-                runtimeCanvas.SetActive(true);
-                active = false;
+                DisableMenu();
             }
             else
             {
                 //disable mechanics
-                cameraMovement.active = false;
-                spawnCards.active = false;
-
-                menuCanvas.SetActive(true);
-                runtimeCanvas.SetActive(false);
-                active = true;
+                EnableMenu();
             }
         }
+    }
+    public void DisableMenu()
+    {
+        //enable machanics
+        cameraMovement.active = true;
+        spawnCards.active = true;
+
+        menuCanvas.SetActive(false);
+        runtimeCanvas.SetActive(true);
+        active = false;
+    }
+    public void EnableMenu()
+    {
+        //disable mechanics
+        cameraMovement.active = false;
+        spawnCards.active = false;
+
+        menuCanvas.SetActive(true);
+        runtimeCanvas.SetActive(false);
+        active = true;
     }
     public void Resume()
     {
