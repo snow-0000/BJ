@@ -23,7 +23,7 @@ public class SpawnCards : MonoBehaviour
     public float offset;
 
     //index when not shuffling
-    private int count;
+    public int count;
 
 
     private void Start()
@@ -58,6 +58,8 @@ public class SpawnCards : MonoBehaviour
                         instance.transform.eulerAngles = Vector3.zero;
 
                         instance.AddComponent<SlideCard>();
+                        instance.AddComponent<MoveAndDestroy>().target = transform;
+                    
 
                     }
                     else
@@ -70,6 +72,7 @@ public class SpawnCards : MonoBehaviour
                         instance.transform.eulerAngles = Vector3.zero;
 
                         instance.AddComponent<SlideCard>();
+                        instance.AddComponent<MoveAndDestroy>().target = transform;
 
                         count += 1;
                     }
@@ -84,6 +87,8 @@ public class SpawnCards : MonoBehaviour
 
                         GameObject instance = Instantiate(Resources.Load(resources[index].name) as GameObject);
                         instance.transform.SetParent(parent);
+
+                        instance.AddComponent<MoveAndDestroy>().target = transform;
 
                         instance.transform.position = new Vector3(-0.2f + offset, 0.75f - (offset/100), 0.15f);
 
@@ -119,6 +124,8 @@ public class SpawnCards : MonoBehaviour
                     //istantiate gameobject and add components and positional values
                         GameObject instance = Instantiate(Resources.Load(resources[count].name) as GameObject);
                         instance.transform.SetParent(parent);
+
+                        instance.AddComponent<MoveAndDestroy>().target = transform;
 
                         instance.transform.position = new Vector3(-0.2f + offset, 0.75f - (offset / 100), 0.15f);
 

@@ -259,13 +259,14 @@ public class GameManager : MonoBehaviour
         spawner.usedCards.Clear();
         for (int i = 0; i < spawner.parent.childCount; i++)
         {
-            Object.Destroy(spawner.parent.GetChild(i).gameObject);
+            spawner.parent.GetChild(i).GetComponent<MoveAndDestroy>().destroy = true;
         }
 
 
         //Resets player card count values and canvas text
         for (int i = 0; i < activePlayers.Count; i++)
         {
+            spawner.count = 0;
             activePlayers[i].GetComponent<SetText>().text.SetText("");
             activePlayers[i].GetComponent<CardCount>().ownedCardCount = 0;
             activePlayers[i].GetComponent<CardCount>().expectedCards = 2;

@@ -4897,6 +4897,7 @@ MonoBehaviour:
   parent: {fileID: 1868969481}
   dealerCard: {fileID: 1947014645}
   offset: 0
+  count: 0
 --- !u!65 &2063555428
 BoxCollider:
   m_ObjectHideFlags: 0
